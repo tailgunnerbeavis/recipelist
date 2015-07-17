@@ -1,4 +1,4 @@
-Connect HQ's Frontend Code Test
+DataScience's Frontend Code Test
 ==================
 
 This is an at-home exercise that we use as part of our standard interview process for frontend and full-stack developers.

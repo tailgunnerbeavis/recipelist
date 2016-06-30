@@ -39,11 +39,11 @@ export function getRecipe(state, recipeName) {
 }
 
 export function getAllRecipes(state) {
-  return _.toArray(_.get(state,'byName'))
+  return _.toArray(_.get(state,'byName', []))
 }
 
 export function getSelectedRecipes(state) {
-  return state.selectedNames
+  return _.get(state, 'selectedNames', [])
 }
 
 export default function recipes(state = {}, action) {

@@ -3,7 +3,6 @@ import { RECEIVE_INGREDIENTS, SELECT_INGREDIENT_FILTER, UNSELECT_INGREDIENT_FILT
 var _ = require('lodash')
 
 function byName(state = {}, action) {
-  // console.log(action);
   switch (action.type) {
     case RECEIVE_INGREDIENTS:
       var ingredients = []
@@ -40,11 +39,9 @@ export function getIngredient(state, ingredientName) {
 }
 
 export function getAllIngredients(state) {
-  return _.toArray(state.byName)
+  return _.toArray(_.get(state,'byName', []))
 }
 
 export function getFilterIngredients(state) {
-  // console.log("getfilteringredients")
-  // console.log(state)
-  return _.get(state, 'filterNames')
+  return _.get(state, 'filterNames', [])
 }

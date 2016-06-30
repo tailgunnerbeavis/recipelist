@@ -20,7 +20,7 @@ function getRecipe(state, recipeName) {
 
 export function getSelectedIngredients(state) {
   var ingredientList = []
-  fromRecipes.getSelectedRecipes(state.recipes).map(function(recipe){
+  fromRecipes.getSelectedRecipes(_.get(state,'recipes', [])).map(function(recipe){
     ingredientList = ingredientList.concat( getRecipe(state, recipe).ingredients )
   })
   return _.uniq(ingredientList).sort()
@@ -28,7 +28,7 @@ export function getSelectedIngredients(state) {
 
 export function getFilteredRecipes(state) {
   var recipeList = []
-  fromRecipes.getAllRecipes(state.recipes).map(function(recipe){
+  fromRecipes.getAllRecipes(_.get(state, 'recipes', [])).map(function(recipe){
     var filters = fromIngredients.getFilterIngredients(state.ingredients)
     if (filters.every(function(filter){
       return recipe.ingredients.indexOf(filter) > -1

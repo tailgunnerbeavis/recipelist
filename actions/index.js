@@ -19,7 +19,7 @@ export function getAllRecipes() {
 
 export function toggleRecipe(recipeName) {
   return (dispatch, getState) => {
-    if(getState().recipes.selectedNames.indexOf(recipeName) > -1) {
+    if(getState().default.recipes.selectedNames.indexOf(recipeName) > -1) {
       dispatch(unselectRecipe(recipeName))
     } else {
       dispatch(selectRecipe(recipeName))

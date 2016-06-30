@@ -22,7 +22,7 @@ RecipesContainer.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    selected_ingredients: getSelectedIngredients(state)
+    selected_ingredients: getSelectedIngredients(state.default)
   }
 }
 

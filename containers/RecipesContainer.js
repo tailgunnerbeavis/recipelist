@@ -45,9 +45,9 @@ RecipesContainer.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    recipes: getAllRecipes(state.recipes),
-    selected_recipes: getSelectedRecipes(state.recipes),
-    filtered_recipes: getFilteredRecipes(state)
+    recipes: getAllRecipes(state.default.recipes),
+    selected_recipes: getSelectedRecipes(state.default.recipes),
+    filtered_recipes: getFilteredRecipes(state.default)
   }
 }
 

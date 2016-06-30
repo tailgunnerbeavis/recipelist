@@ -30,7 +30,6 @@ class FilterContainer extends Component {
       suggestions: this.getSuggestions(value)
     });
     if(reason === ('enter' || 'click')) {
-    	console.log("save " + value);
     	this.props.selectIngredientFilter(value);
     }
   }
@@ -51,7 +50,6 @@ class FilterContainer extends Component {
       value,
       onChange: this.onChange
     };
-    console.log(this.props.filter_ingredients)
   	var filters = this.props.filter_ingredients.map( (ingredient, index) =>
         <Filter
           ingredient={ingredient}
@@ -90,8 +88,8 @@ FilterContainer.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    ingredients: getAllIngredients(state.ingredients),
-    filter_ingredients: getFilterIngredients(state.ingredients) 
+    ingredients: getAllIngredients(state.default.ingredients),
+    filter_ingredients: getFilterIngredients(state.default.ingredients) 
   }
 }
 

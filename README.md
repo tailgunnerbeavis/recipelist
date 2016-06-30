@@ -6,16 +6,20 @@ Recipe List using Redux/React
 * Add checkboxes to allow selection of multiple recipes.
 * Show an alphabetically ordered list of distinct ingredients for the selected recipes. This should update as recipes are selected / unselected.
 * Persist the selections locally and regenerate the view on page refresh.
-* In a README note any required setup to be able to run the app, such as modifying hosts file, etc.
 
 =============================================
 
 ## Setup
+```
 npm install
 node server.js
+```
 
 You should see this in the console:
+
+```
 ==> Listening on port 3000. Open up http://localhost:3000/ in your browser.
 webpack built 233470968b3571084632 in 4533ms
+```
 
 

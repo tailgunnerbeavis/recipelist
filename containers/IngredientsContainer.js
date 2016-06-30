@@ -1,7 +1,7 @@
-import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
-import { getSelectedIngredients } from '../reducers/index'
-import Ingredient from '../components/Ingredient'
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { getSelectedIngredients } from '../reducers/index';
+import Ingredient from '../components/Ingredient';
 
 class RecipesContainer extends Component {
   render() {
@@ -12,21 +12,21 @@ class RecipesContainer extends Component {
     )
     return (
     	<div>{children}</div>
-    )
-  }
-}
+    );
+  };
+};
 
 RecipesContainer.propTypes = {
   selected_ingredients: PropTypes.array.isRequired
-}
+};
 
 function mapStateToProps(state) {
   return {
     selected_ingredients: getSelectedIngredients(state.default)
-  }
-}
+  };
+};
 
 export default connect(
   mapStateToProps,
   {}
-)(RecipesContainer)
+)(RecipesContainer);

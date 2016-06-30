@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import RecipesContainer from './RecipesContainer'
-import IngredientsContainer from './IngredientsContainer'
-import FilterContainer from './FilterContainer'
+import React, { Component } from 'react';
+import RecipesContainer from './RecipesContainer';
+import IngredientsContainer from './IngredientsContainer';
+import FilterContainer from './FilterContainer';
 
 export default class App extends Component {
   render() {
@@ -15,5 +15,5 @@ export default class App extends Component {
         <IngredientsContainer />
       </div>
     )
-  }
-}
+  };
+};

@@ -1,9 +1,9 @@
-import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
-import { getSelectedRecipes, getAllRecipes } from '../reducers/recipes'
-import { getFilteredRecipes } from '../reducers/index'
-import { toggleRecipe } from '../actions'
-import Recipe from '../components/Recipe'
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { getSelectedRecipes, getAllRecipes } from '../reducers/recipes';
+import { getFilteredRecipes } from '../reducers/index';
+import { toggleRecipe } from '../actions';
+import Recipe from '../components/Recipe';
 
 class RecipesContainer extends Component {
   render() {
@@ -27,12 +27,12 @@ class RecipesContainer extends Component {
           onAddToCartClicked={filtered ? null : () => this.props.toggleRecipe(recipe.name)}
           key={index}/>
         }, this
-    )
+    );
     return (
     	<div>{children}</div>
-    )
-  }
-}
+    );
+  };
+};
 
 RecipesContainer.propTypes = {
   recipes: PropTypes.arrayOf(PropTypes.shape({
@@ -41,17 +41,17 @@ RecipesContainer.propTypes = {
     cook_time: PropTypes.number.isRequired
   })),
   selected_recipes: PropTypes.array.isRequired
-}
+};
 
 function mapStateToProps(state) {
   return {
     recipes: getAllRecipes(state.default.recipes),
     selected_recipes: getSelectedRecipes(state.default.recipes),
     filtered_recipes: getFilteredRecipes(state.default)
-  }
-}
+  };
+};
 
 export default connect(
   mapStateToProps,
   { toggleRecipe }
-)(RecipesContainer)
+)(RecipesContainer);

@@ -5,7 +5,7 @@ import Ingredient from '../components/Ingredient';
 
 class RecipesContainer extends Component {
   render() {
-  	var children = this.props.selected_ingredients.map( (ingredient, index) =>
+  	var children = _.uniq(this.props.selected_ingredients).sort().map( (ingredient, index) =>
         <Ingredient
           ingredient={ingredient}
           key={index}/>

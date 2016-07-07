@@ -4,6 +4,7 @@ import { getAllIngredients, getFilterIngredients } from '../reducers/ingredients
 import { selectIngredientFilter, unselectIngredientFilter } from '../actions/index';
 import Filter from '../components/Filter';
 import Autosuggest from 'react-autosuggest';
+var _ = require('lodash');
 
 class FilterContainer extends Component {
 
@@ -38,7 +39,7 @@ class FilterContainer extends Component {
 	  const inputValue = value.trim().toLowerCase();
 	  const inputLength = inputValue.length;
 
-	  return inputLength === 0 ? [] : this.props.ingredients.filter(lang =>
+	  return inputLength === 0 ? [] : _.uniq(this.props.ingredients).sort().filter(lang =>
 	    lang.toLowerCase().slice(0, inputLength) === inputValue
 	  );
 	};

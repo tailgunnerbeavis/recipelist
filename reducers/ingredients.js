@@ -13,7 +13,7 @@ function byName(state = {}, action) {
           Array.prototype.push.apply(ingredients, recipe.ingredients);
         })
       };
-      return Object.assign({}, state, _.uniq(ingredients).sort());
+      return Object.assign({}, state, ingredients);
     default:
       return state;
   }
@@ -22,10 +22,11 @@ function byName(state = {}, action) {
 export default function filterNames(state = [], action) {
   switch (action.type) {
     case SELECT_INGREDIENT_FILTER:
-      return _.uniq([ ...state, action.ingredientName ]);
+      return [ ...state, action.ingredientName ];
     case UNSELECT_INGREDIENT_FILTER:
-      state.splice(state.indexOf(action.ingredientName), 1);
-      return state;
+      var newstate = [ ...state ];
+      newstate.splice(newstate.indexOf(action.ingredientName), 1);
+      return newstate;
     default:
       return state;
   }

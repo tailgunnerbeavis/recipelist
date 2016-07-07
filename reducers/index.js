@@ -23,7 +23,7 @@ export function getSelectedIngredients(state) {
   fromRecipes.getSelectedRecipes(_.get(state,'recipes', [])).map(function(recipe){
     ingredientList = ingredientList.concat( getRecipe(state, recipe).ingredients );
   });
-  return _.uniq(ingredientList).sort();
+  return ingredientList;
 }
 
 export function getFilteredRecipes(state) {

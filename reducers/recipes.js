@@ -22,8 +22,9 @@ function selectedNames(state = [], action) {
     case SELECT_RECIPE:
       return [ ...state, action.recipeName ];
     case UNSELECT_RECIPE:
-      state.splice(state.indexOf(action.recipeName), 1);
-      return state;
+      var newstate = [ ...state ];
+      newstate.splice(newstate.indexOf(action.recipeName), 1);
+      return newstate;
     default:
       return state;
   };
